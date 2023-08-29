@@ -27,6 +27,11 @@ public class AccountRegistrationPage extends BasePage{
     @FindBy(xpath ="//button[@type='submit']")
     WebElement btnContinue;
 
+    @FindBy(xpath ="//h1")
+    WebElement msgConfirmationMessage;
+
+
+
 
     // Action Methods for this page
 
@@ -52,6 +57,16 @@ public class AccountRegistrationPage extends BasePage{
     public void clickContinueButton(){
 
         btnContinue.click();
+    }
+
+    public void clickChkPolicy(){
+
+        chkPolicy.click();
+    }
+
+    public String getConfirmationMessage(){
+       return  msgConfirmationMessage.getText();
+
     }
 
 }

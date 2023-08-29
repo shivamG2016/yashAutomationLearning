@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -14,4 +15,7 @@ public class BasePage {
         PageFactory.initElements(driver,this);
 
     }
+
+
+
 }
