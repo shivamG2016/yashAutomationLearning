@@ -35,6 +35,7 @@ public class TC001_AccountRegistrationTest extends BaseClass{
                   Assert.assertEquals(confirmationMessage, "Your Account Has Been Created!");
 
               } catch (Exception e){
+                  logger.error("Log error message");
                   Assert.fail();
               }
 

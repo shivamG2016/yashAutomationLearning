@@ -10,6 +10,8 @@ public class AccountRegistrationPage extends BasePage{
 
     }
 
+
+
     @FindBy(xpath ="//input[@id='input-firstname']")
     WebElement txtFirstName;
     @FindBy(xpath ="//input[@id='input-lastname']")
@@ -21,6 +23,7 @@ public class AccountRegistrationPage extends BasePage{
     @FindBy(xpath ="//input[@id='input-password']")
     WebElement txtPassword;
 
+
     @FindBy(xpath ="//input[@name='agree']")
     WebElement chkPolicy;
 
@@ -31,7 +34,7 @@ public class AccountRegistrationPage extends BasePage{
     WebElement msgConfirmationMessage;
 
 
-
+ // driver.findbyElemt(By.xpath).sendKeys("text)
 
     // Action Methods for this page
 
