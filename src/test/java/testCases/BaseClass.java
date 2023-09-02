@@ -1,8 +1,6 @@
 package testCases;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -14,13 +12,12 @@ import java.time.Duration;
 public class BaseClass {
 public WebDriver driver ;
 
-public Logger logger ;
+
     @BeforeTest
    public void setUp()
     {
-        logger = (Logger) LogManager.getLogger(this.getClass());
      driver=new EdgeDriver();
-     driver.get("https://demo.opencart.com/");
+     driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
      driver.manage().window().maximize();
      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
