@@ -1,8 +1,11 @@
 package testCases;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -11,12 +14,15 @@ import java.time.Duration;
 
 public class BaseClass {
 public WebDriver driver ;
-
+public Logger logger ;
 
     @BeforeTest
    public void setUp()
     {
-     driver=new EdgeDriver();
+        logger = (Logger) LogManager.getLogger(this.getClass());
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("excludeSwitches",new String[] {"enable-automation"});
+     driver=new ChromeDriver(options);
      driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
      driver.manage().window().maximize();
      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
